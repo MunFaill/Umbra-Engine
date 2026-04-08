@@ -1,0 +1,41 @@
+#pragma once
+
+extern "C"
+{
+    #include <SDL3/SDL.h>
+}
+
+namespace Umbra
+{
+    enum class Key : int
+    {
+        Q = SDL_SCANCODE_Q,
+        W = SDL_SCANCODE_W,
+        E = SDL_SCANCODE_E,
+        R = SDL_SCANCODE_R,
+        T = SDL_SCANCODE_T,
+        Y = SDL_SCANCODE_Y,
+        U = SDL_SCANCODE_U,
+        I = SDL_SCANCODE_I,
+        O = SDL_SCANCODE_O,
+        P = SDL_SCANCODE_P,
+
+        A = SDL_SCANCODE_A,
+        S = SDL_SCANCODE_S,
+        D = SDL_SCANCODE_D,
+        F = SDL_SCANCODE_F,
+        G = SDL_SCANCODE_G,
+        H = SDL_SCANCODE_H,
+        J = SDL_SCANCODE_J,
+        K = SDL_SCANCODE_K,
+        L = SDL_SCANCODE_L,
+
+        Z = SDL_SCANCODE_Z,
+        X = SDL_SCANCODE_X,
+        C = SDL_SCANCODE_C,
+        V = SDL_SCANCODE_V,
+        B = SDL_SCANCODE_B,
+        N = SDL_SCANCODE_N,
+        M = SDL_SCANCODE_M
+    };
+}

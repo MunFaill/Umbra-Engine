@@ -1,0 +1,9 @@
+.vscode
+bin
+bin-int
+makefile
+.exe
+.x64_86
+.appimage
+.app
+.desktop
