@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../input/Input.hpp"
+#include "../renderer/Renderer.hpp"
 
 namespace Umbra
 {
@@ -13,6 +14,7 @@ namespace Umbra
         private:
             bool m_Running = true;
             Input m_Input;
+            Renderer m_Renderer;
     };
     Application* BindApplication();
 }

@@ -1,12 +1,17 @@
 #include "Application.hpp"
 
 #include "Logger.hpp"
+#include "../plataform/Window.hpp"
 
 namespace Umbra
 {
     Application::Application()
     {
         log_message("Umbra Application Constructor ready");
+        if (SDL_Init(SDL_INIT_VIDEO) < 0)
+        {
+            log_warning("Failed to initialize SDL");
+        }
     }
 
     Application::~Application()
@@ -17,6 +22,13 @@ namespace Umbra
     void Application::Run()
     {
         log_message("Application running");
-        while (m_Running);
+        Window window("Umbra Engine", 800, 600);
+        m_Renderer.Init(window.GetNativeWindow());
+        while (!m_Input.ShouldQuit())
+        {
+            m_Input.Update();
+            m_Renderer.BeginFrame();
+            m_Renderer.EndFrame();
+        }
     }
 }
