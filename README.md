@@ -6,7 +6,7 @@
 # Building
 
 ### Dependencies
-- SDL
+- SDL System binary temporarily
 
 Currently tested and running only on Linux.
 
