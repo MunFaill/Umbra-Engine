@@ -6,14 +6,13 @@
 # Building
 
 ### Dependencies
+- Premake5
 - SDL System binary temporarily
+- bgfx | bx | bimg
 
 Currently tested and running only on Linux.
 
 ``` shell
-git clone https://github.com/MunFaill/Umbra-Engine.git
-cd Umbra-Engine
-./Vendor/Premake5/Linux/premake5 gmake
-make -j$(nproc)
-./bin/Debug-linux-x86_64/UmbraSandbox/UmbraSandbox # Bin path
+git clone --recursive https://github.com/MunFaill/Umbra-Engine.git
+cd Scripts && ./LinuxBuild.sh
 ```
