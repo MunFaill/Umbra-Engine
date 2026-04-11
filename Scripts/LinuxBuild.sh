@@ -7,7 +7,6 @@ read -n 1 -s
 
 echo -e "\e[32mCompiling bgfx for linux, this may take a while...\e[0m"
 cd ../Vendor/Bgfx/bgfx
-make clean
 make linux-gcc-release64 -j$(nproc)
 
 echo -e "\e[32mCompiling Umbra...\e[0m"
