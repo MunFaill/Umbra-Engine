@@ -26,20 +26,12 @@ files
 
 includedirs
 {
-    "Vendor/Bgfx/bgfx/include"
-}
-
-libdirs
-{
-    "Vendor/Bgfx/bgfx/.build/linux64_gcc/bin"
+    --TODO
 }
 
 links
 {
-    "SDL3",
-    "bgfxRelease",
-    "bimgRelease",
-    "bxRelease"
+    "SDL3"
 }
 
 filter "configurations:Debug"

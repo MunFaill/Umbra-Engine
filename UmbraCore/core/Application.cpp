@@ -19,6 +19,16 @@ namespace Umbra
         log_warning("Umbra Application deleted");
     }
 
+    void Application::PushLayer(Layer* layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer* overlay)
+    {
+        m_LayerStack.PushOverlay(overlay);
+    }
+
     void Application::Run()
     {
         log_message("Application running");
@@ -26,9 +36,15 @@ namespace Umbra
         m_Renderer.Init(window.GetNativeWindow());
         while (!m_Input.ShouldQuit())
         {
+            m_Time.CalculateTime();
             m_Input.Update();
             m_Renderer.BeginFrame();
             m_Renderer.EndFrame();
+
+            for (Layer* layer : m_LayerStack)
+            {
+                layer->OnUpdate(m_Time.DeltaTime);
+            }
         }
     }
 }
