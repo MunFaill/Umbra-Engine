@@ -26,12 +26,13 @@ files
 
 includedirs
 {
-    --TODO
+    "Vendor/Bgfx/"
 }
 
 links
 {
-    "SDL3"
+    "SDL3",
+    "bgfx"
 }
 
 filter "configurations:Debug"
