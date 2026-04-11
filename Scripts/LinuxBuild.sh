@@ -11,7 +11,7 @@ make linux-gcc-release64 -j$(nproc)
 
 echo -e "\e[32mCompiling Umbra...\e[0m"
 cd ../../../
-./Vendor/Premake5/premake5 gmake
+./Vendor/Premake5/Linux/premake5 gmake
 make -j$(nproc)
 
 echo -e "\e[32mCompilation finished, files are located on bin/Debug-linux-x86_64/ ...\e[0m"
