@@ -18,6 +18,10 @@ namespace Umbra
             virtual void OnDetach() {}
             virtual void OnUpdate(float dt) {}
 
+            virtual void OnWindowResize(int w, int h) {}
+            virtual void OnSceneOpen() {}
+            virtual void OnMouseMotion() {}
+
             inline const std::string& GetName() const { return m_DebugName; }
         private:
             std::string m_DebugName;

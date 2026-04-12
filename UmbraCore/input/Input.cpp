@@ -19,6 +19,17 @@ namespace Umbra
                     m_ShouldQuit = true;
                     break;
 
+                case SDL_EVENT_WINDOW_RESIZED:
+                    // Dispara o evento de Resize para todos os inscritos
+                    for (auto& cb : m_ResizeCallbacks)
+                        cb(event.window.data1, event.window.data2);
+                    break;
+
+                case SDL_EVENT_MOUSE_MOTION:
+                    for (auto& cb : m_MouseMotionCallbacks)
+                        cb();
+                    break;
+
                 case SDL_EVENT_KEY_DOWN:
                     if (!m_Keys[event.key.scancode])
                     {
@@ -31,11 +42,14 @@ namespace Umbra
                     m_Keys[event.key.scancode] = false;
                     m_KeysUp[event.key.scancode] = true;
                     break;
-        
-                default:
-                    break;
             }
         }
+    }
+
+    void Input::TriggerSceneOpen()
+    {
+        for (auto& cb : m_SceneOpenCallbacks)
+            cb();
     }
 
     bool Input::IsKeyPressed(Key key)

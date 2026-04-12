@@ -5,11 +5,11 @@ class ExampleLayer : public Umbra::Layer
     public:
         ExampleLayer() : Layer("Example")
         {}
-        void OnUpdate(float dt) override
+        
+        void OnWindowResize(int w, int h) override
         {
-            Umbra::log_message("Example layer");
+            Umbra::log_message("Window resized!");
         }
-
 };
 
 class App : public Umbra::Application

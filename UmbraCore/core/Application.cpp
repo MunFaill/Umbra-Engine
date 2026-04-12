@@ -7,6 +7,15 @@ namespace Umbra
 {
     Application::Application()
     {
+        m_Input.OnWindowResize([this](int w, int h)
+        {
+            for (Layer* layer : m_LayerStack)
+            {
+                layer->OnWindowResize(w, h);
+            }
+        });
+
+
         log_message("Umbra Application Constructor ready");
         if (SDL_Init(SDL_INIT_VIDEO) < 0)
         {
