@@ -8,7 +8,7 @@
 ### Dependencies
 - Premake5
 - SDL System binary temporarily
-- bgfx | bx | bimg
+- [TinyEvents](https://github.com/KyrietS/tinyevents)
 
 Currently tested and running only on Linux.
 
