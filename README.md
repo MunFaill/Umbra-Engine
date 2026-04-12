@@ -8,7 +8,6 @@
 ### Dependencies
 - Premake5
 - SDL System binary temporarily
-- [TinyEvents](https://github.com/KyrietS/tinyevents)
 
 Currently tested and running only on Linux.
 
