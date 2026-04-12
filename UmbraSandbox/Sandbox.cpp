@@ -8,7 +8,6 @@ class ExampleLayer : public Umbra::Layer
         
         void OnWindowResize(int w, int h) override
         {
-            Umbra::log_message("Window resized!");
         }
 };
 

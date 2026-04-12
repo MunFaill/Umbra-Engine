@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Logger.hpp"
-
 extern Umbra::Application* Umbra::BindApplication();
 
 int main()

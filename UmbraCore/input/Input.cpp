@@ -1,4 +1,5 @@
 #include "Input.hpp"
+#include "../core/Logger.hpp"
 
 namespace Umbra
 {
@@ -20,7 +21,6 @@ namespace Umbra
                     break;
 
                 case SDL_EVENT_WINDOW_RESIZED:
-                    // Dispara o evento de Resize para todos os inscritos
                     for (auto& cb : m_ResizeCallbacks)
                         cb(event.window.data1, event.window.data2);
                     break;

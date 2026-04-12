@@ -31,20 +31,27 @@ std::string return_current_time_and_date() {
 
 namespace Umbra
 {
-    void log_warning(std::string message)
-    {
-        std::cout << "\033[1;33m[" << return_current_time_and_date() << "]" << " " << message << "\033[0m\n";
-    }
-    void log_fatal_error(std::string message)
-    {
-        throw std::runtime_error("\033[1;31m[" + return_current_time_and_date() + "] " + message + "\033[0m\n");
-    }
-    void log_error(std::string message)
-    {
-        std::cout << "\033[1;31m[" << return_current_time_and_date() << "]" << " " << message << "\033[0m\n";
-    }
-    void log_message(std::string message)
-    {
-        std::cout << "\033[1;34m[" << return_current_time_and_date() << "]" << " " << message << "\033[0m\n";
-    }
+    #ifdef Debug
+        void log_warning(std::string message)
+        {
+            std::cout << "\033[1;33m[" << return_current_time_and_date() << "]" << " " << message << "\033[0m\n";
+        }
+        void log_fatal_error(std::string message)
+        {
+            throw std::runtime_error("\033[1;31m[" + return_current_time_and_date() + "] " + message + "\033[0m\n");
+        }
+        void log_error(std::string message)
+        {
+            std::cout << "\033[1;31m[" << return_current_time_and_date() << "]" << " " << message << "\033[0m\n";
+        }
+        void log_message(std::string message)
+        {
+            std::cout << "\033[1;34m[" << return_current_time_and_date() << "]" << " " << message << "\033[0m\n";
+        }
+    #else
+        void log_warning(std::string message){}
+        void log_fatal_error(std::string message){}
+        void log_error(std::string message){}
+        void log_message(std::string message){}
+    #endif
 } // namespace Umbra

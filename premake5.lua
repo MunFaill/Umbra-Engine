@@ -36,8 +36,10 @@ links
 
 filter "configurations:Debug"
 symbols "On"
+defines {"Debug"}
 filter "configurations:Release"
 optimize "On"
+defines {"NDEBUG"}
 
 --=================================================================
 --UmbraEditor======================================================
@@ -68,8 +70,10 @@ links
 
 filter "configurations:Debug"
 symbols "On"
+defines {"Debug"}
 filter "configurations:Release"
 optimize "On"
+defines {"NDEBUG"}
 
 --=================================================================
 --UmbraSandbox=====================================================
@@ -100,7 +104,9 @@ links
 
 filter "configurations:Debug"
 symbols "On"
+defines {"Debug"}
 filter "configurations:Release"
 optimize "On"
+defines {"NDEBUG"}
 
 --=================================================================
